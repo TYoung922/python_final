@@ -1,0 +1,76 @@
+{% extends "base.html" %} {% block title %}choose your adventure{% endblock %} {% block content
+%}
+<div class="d-flex flex-column align-items-center justify-content-center">
+<h1 class="mt-3">Welcome to choose your own adventure</h1>
+    <pre>
+  ____________________________________________________________________
+ / \-----     ---------  -----------     -------------- ------    ----\
+ \_/__________________________________________________________________/
+ |~ ~~ ~~~ ~ ~ ~~~ ~ _____.----------._ ~~~  ~~~~ ~~   ~~  ~~~~~ ~~~~|
+ |  _   ~~ ~~ __,---'_       "         `. ~~~ _,--.  ~~~~ __,---.  ~~|
+ | | \___ ~~ /      ( )   "          "   `-.,' (') \~~ ~ (  / _\ \~~ |
+ |  \    \__/_   __(( _)_      (    "   "     (_\_) \___~ `-.___,'  ~|
+ |~~ \     (  )_(__)_|( ))  "   ))          "   |    "  \ ~~ ~~~ _ ~~|
+ |  ~ \__ (( _( (  ))  ) _)    ((     \\//    " |   "    \_____,' | ~|
+ |~~ ~   \  ( ))(_)(_)_)|  "    ))    //\\ " __,---._  "  "   "  /~~~|
+ |    ~~~ |(_ _)| | |   |   "  (   "      ,-'~~~ ~~~ `-.   ___  /~ ~ |
+ | ~~     |  |  |   |   _,--- ,--. _  "  (~~  ~~~~  ~~~ ) /___\ \~~ ~|
+ |  ~ ~~ /   |      _,----._,'`--'\.`-._  `._~~_~__~_,-'  |H__|  \ ~~|
+ |~~    / "     _,-' / `\ ,' / _'  \`.---.._          __        " \~ |
+ | ~~~ / /   .-' , / ' _,'_  -  _ '- _`._ `.`-._    _/- `--.   " " \~|
+ |  ~ / / _-- `---,~.-' __   --  _,---.  `-._   _,-'- / ` \ \_   " |~|
+ | ~ | | -- _    /~/  `-_- _  _,' '  \ \_`-._,-'  / --   \  - \_   / |
+ |~~ | \ -      /~~| "     ,-'_ /-  `_ ._`._`-...._____...._,--'  /~~|
+ | ~~\  \_ /   /~~/    ___  `---  ---  - - ' ,--.     ___        |~ ~|
+ |~   \      ,'~~|  " (o o)   "         " " |~~~ \_,-' ~ `.     ,'~~ |
+ | ~~ ~|__,-'~~~~~\    \"/      "  "   "    /~ ~~   O ~ ~~`-.__/~ ~~~|
+ |~~~ ~~~  ~~~~~~~~`.______________________/ ~~~    |   ~~~ ~~ ~ ~~~~|
+ |____~jrei~__~_______~~_~____~~_____~~___~_~~___~\_|_/ ~_____~___~__|
+ / \----- ----- ------------  ------- ----- -------  --------  -------\
+ \_/__________________________________________________________________/</pre>
+ <br>
+ <div class="text-center">
+ <form method="GET">
+<button type="submit" class="btn btn-primary mb-3">Start a new adventure</button>
+</form>
+<form method="POST">
+    <label for="choice">What do you do:<br>(please make all responses lowercase)</label>
+    <br><input type="text" name="choice" id="choice">
+    <button type="submit" class="btn btn-secondary">Submit</button>
+</form>
+
+<div class="mt-2">
+    <pre id="currentWord">{{ starting_prompt }}</pre>
+    <pre id="result">{{ result|safe }}</pre>
+</div>
+</div>
+</div>
+
+<script>
+    function typeEffect(text, element, delay = 35) {
+        let i = 0;
+        element.textContent = "";
+
+        function type() {
+            if (i < text.length) {
+                element.textContent += text.charAt(i);
+                i++;
+                setTimeout(type, delay);
+            }
+        }
+        type();
+    }
+
+    // Call the typeEffect function when the page loads or after a submission
+    document.addEventListener("DOMContentLoaded", function() {
+        const resultText = `{{ result|safe }}`;
+        const resultElement = document.getElementById('result');
+
+        // Call the typing effect with the result text
+        if (resultText) {
+            typeEffect(resultText, resultElement);
+        }
+    });
+</script>
+
+{% endblock %}

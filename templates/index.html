@@ -1,0 +1,47 @@
+<!--<!DOCTYPE html>-->
+<!--<html lang="en">-->
+<!--<head>-->
+<!--    <meta charset="UTF-8">-->
+<!--    <meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+<!--    <title>Display Input</title>-->
+<!--</head>-->
+<!--<body>-->
+<!--    <div id="gameBoard">-->
+<!--    <div id="prompts">-->
+<!--        <h2>Have Fun!</h2>-->
+<!--        <p>{{ user_input }}</p>-->
+<!--    </div>-->
+<!--    <h1>Input Display</h1>-->
+<!--    <form method="POST">-->
+<!--        <input type="text" name="user_input" placeholder="Enter something" required>-->
+<!--        <button type="submit">Submit</button>-->
+<!--    </form>-->
+<!--    </div>-->
+
+
+<!--</body>-->
+<!--</html>-->
+{% extends "base.html" %} {% block title %}Home{% endblock %} {% block content
+%}
+<div class="d-flex flex-column justify-content-around align-items-center pt-5">
+<h1 align="center">Welcome Lovers of text games!</h1>
+<pre class="pt-5">
+      ___________________   ___________________
+  .-/|  78   ~~**~~      \ /      ~~**~~   79  |\-.
+  ||||                    :                    ||||
+  ||||   If you are a     :   please select    ||||
+  ||||   fan of text      :   a game from      ||||
+  ||||   based games      :   the navbar       ||||
+  ||||   then you're      :   above and        ||||
+  ||||   in the right     :   have fun!        ||||
+  ||||   place.           :                    ||||
+  ||||                    :                    ||||
+  ||||                    :                    ||||
+  ||||                    :                    ||||
+  ||||                    :                    ||||
+  ||||___________________ : ___________________||||
+  ||/====================\:/====================\||
+  `---------------------~___~--------------------''
+</pre>
+</div>
+{% endblock %}

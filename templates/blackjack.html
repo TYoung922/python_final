@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block title %}Blackjack{% endblock %} {% block content
+%}
+<div class="d-flex flex-column align-items-center" style="min-height: 100vh;">
+<h1 class="mt-3">Welcome to Blackjack</h1>
+    <pre>
+                         _
+ ,'`.    _  _    /\    _(_)_
+(_,._)  ( `' )  <  >  (_)+(_)
+  /\     `.,'    \/      |
+    </pre>
+ <br>
+    <div class="text-center">
+ <form method="GET">
+<button type="submit" class="btn btn-primary mb-3">New game</button>
+</form>
+<form method="POST">
+    <button type="submit" name="action" value="stand" class="btn btn-secondary">Stand</button>
+    <button type="submit" name="action" value="draw" class="btn btn-secondary">Draw</button>
+</form>
+
+<div class="mt-3">
+    <pre id="currentWord">{{ starting_hand }}</pre>
+    <pre id="result">{{ result|safe }}</pre>
+    </div>
+</div>
+    </div>
+{% endblock %}

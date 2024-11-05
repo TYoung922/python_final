@@ -1,0 +1,36 @@
+{% extends "base.html" %} {% block title %}Number Guess{% endblock %} {% block content
+%}
+<div class="d-flex flex-column align-items-center" style="min-height: 100vh;">
+<h1 class="mt-3">Welcome to the Number Guessing Game</h1>
+    <pre>
+1     1   2   2   3     3   44444    55555   6666       7777   8   8  99999  0000  0000
+1 1   1   2   2   33   33   4    4   5       6   6     7       8   8  9      0     0
+1  1  1   2   2   3 3 3 3   44444    5555    6666      7  777   8   8  9999    000   000
+1   1 1   2   2   3  3  3   4    4   5       6 6       7    7   8   8  9          0     0
+1    11    222    3     3   44444    55555   6  6       7777     888   99999  0000  0000
+
+    </pre>
+ <br>
+    <div class="text-center">
+ <form method="GET">
+     <label for="difficulty">Choose a difficulty level</label>
+     <br>
+     <select name="difficulty" id="difficulty">
+         <option value="easy">Easy - 10 guesses</option>
+         <option value="hard">Hard - 5 guesses</option>
+     </select>
+
+<button type="submit" class="btn btn-primary mb-3">New game</button>
+</form>
+<form method="POST">
+    <input type="text" name="guess" id="guess">
+    <button type="submit" name="action" value="draw" class="btn btn-secondary">Guess</button>
+</form>
+
+<div>
+    <pre class="mt-3" id="message">{{ message }}</pre>
+    <pre class="mt-3" id="result">{{ prompt|safe }}</pre>
+    </div>
+</div>
+    </div>
+{% endblock %}
