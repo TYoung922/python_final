@@ -90,6 +90,20 @@ def numberguess():
 
     return render_template("numberguess.html", message=message, prompt=prompt)
 
+from games.higher_lower import begin_game, higher_lower
+@app.route('/higherlower', methods=['GET', 'POST'])
+def higherlower():
+    starting_prompt = ""
+    if request.method == 'GET':
+        starting_prompt = begin_game()
+
+    result = ""
+    if request.method == 'POST':
+        action = request.form.get("action")
+        result = higher_lower(action)
+
+    return render_template("higherlower.html", starting_prompt=starting_prompt, result=result)
+
 # @socketio.on('start_game')
 # def start_game():
 #     global process

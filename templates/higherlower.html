@@ -1,0 +1,33 @@
+{% extends "base.html" %} {% block title %}Number Guess{% endblock %} {% block content
+%}
+<div class="d-flex flex-column align-items-center" style="min-height: 100vh;">
+<h1 class="mt-3">Welcome to the Number Guessing Game</h1>
+    <pre>
+    __  ___       __
+   / / / (_)___ _/ /_  ___  _____
+  / /_/ / / __ '/ __ \\/ _ \\/ ___/
+ / __  / / /_/ / / / /  __/ /
+/_/ ///_/\\__, /_/ /_/\\___/_/
+   / /  /____/_      _____  _____
+  / /   / __ \\ | /| / / _ \\/ ___/
+ / /___/ /_/ / |/ |/ /  __/ /
+/_____/\\____/|__/|__/\\___/_/
+
+    </pre>
+ <br>
+    <div class="text-center">
+ <form method="GET">
+<button type="submit" class="btn btn-primary mb-3">New game</button>
+</form>
+<form method="POST">
+    <button type="submit" name="action" value="a" class="btn btn-secondary">A is higher</button>
+    <button type="submit" name="action" value="b" class="btn btn-secondary">B is higher</button>
+</form>
+
+<div class="mt-3">
+    <pre id="currentWord">{{ starting_prompt }}</pre>
+    <pre id="result">{{ result }}</pre>
+    </div>
+</div>
+    </div>
+{% endblock %}
