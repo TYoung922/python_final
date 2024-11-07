@@ -5,36 +5,57 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM"
       crossorigin="anonymous"
     />
     <link
       rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
       crossorigin="anonymous"
+      referrerpolicy="no-referrer"
     />
     <title>{% block title %}Home{% endblock %}</title>
   </head>
   <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbar"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse d-flex flex-row justify-content-around align-items-center" id="navbar">
-        <div class="navbar-nav pr-3 ml-3">
-          <a class="nav-item nav-link mr-4" id="home" href="/">Home</a>
-          <a class="nav-item nav-link mr-4" id="blackjack" href="/blackjack">blackjack</a>
-          <a class="nav-item nav-link mr-4" id="choose" href="/choose">Choose your own adventure</a>
-          <a class="nav-item nav-link mr-4" id="hangman" href="/hangman">Hangman</a>
-          <a class="nav-item nav-link mr-4" id="roPaSc" href="/roPaSc">Rock Paper Scissors</a>
-          <a class="nav-item nav-link mr-4" id="numberguess" href="/numberguess">Number Guess</a>
-          <a class="nav-item nav-link mr-4" id="higherlower" href="/higherlower">Higher lower</a>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark text-center">
+      <div class="container-fluid">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="w-100 d-flex justify-content-around navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" id="home" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="blackjack" href="/blackjack">Blackjack</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="choose" href="/choose">Choose Your Own Adventure</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="hangman" href="/hangman">Hangman</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="roPaSc" href="/roPaSc">Rock Paper Scissors</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="numberguess" href="/numberguess">Number Guess</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="higherlower" href="/higherlower">Higher Lower</a>
+            </li>
+          </ul>
         </div>
       </div>
     </nav>
@@ -42,18 +63,8 @@
     <div class="container">{% block content %} {% endblock %}</div>
 
     <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz"
       crossorigin="anonymous"
     ></script>
 

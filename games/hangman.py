@@ -153,7 +153,8 @@ def hangman_game(choice):
             else:
                 life -= 1
                 if life > 0:
-                    result = f"\nYou guessed {player_guess}, that's not in the word. You lose a life."
+                    result = ' '.join(reveal)
+                    result += f"\nYou guessed {player_guess}, that's not in the word. You lose a life."
                 else: result = f"\nIt was {word}. You Lose!"
             blank_check = "_"
             if not blank_check in reveal:
